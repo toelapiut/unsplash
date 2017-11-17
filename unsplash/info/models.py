@@ -24,7 +24,7 @@ class tags(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
         ordering=['name']
 
@@ -35,3 +35,16 @@ class tags(models.Model):
     #deleting function
     def delete_tag(self):
         self.delete()
+
+class Photos(models.Model):
+    photo=models.ImageField(upload_to='articles/')
+    pub_date=models.DateTimeField(auto_now_add=True)
+    editor=models.ForeignKey(Editor)
+    tags=models.ManyToManyField(tags)
+
+
+    def __str__(self):
+        return photo
+
+    class Meta:
+        ordering=['pub_date']
