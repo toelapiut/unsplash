@@ -11,4 +11,13 @@ class Editor(models.Model):
         return self.first_name
     class Meta:
         ordering=['first_name']
+    
+    def save_editor(self):
+        self.save()
 
+    def delete_editor(self):
+        self.delete()
+
+class tags(models.Model):
+    name=models.CharField(max_length=10)
+    tag_image=models.ImageField(upload_to='articles/')
