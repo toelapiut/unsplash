@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Editor
+from .models import Editor,tags
 # Create your tests here.
 class EditorTest(TestCase):
 
@@ -22,3 +22,26 @@ class EditorTest(TestCase):
         self.editor.delete_editor()
         editors=Editor.objects.all()
         self.assertTrue(len(editors)==0)
+
+class tagsTest(TestCase):
+
+    def setUp(self):
+        self.tag=tags(name='nature')
+
+    # test for checking instance
+    def test_tag_isinstance(self):
+        self.assertTrue(isinstance(self.tag,tags))
+    
+    # test for saving
+    def test_save_tag(self):
+        self.tag.save_tag()
+        tagger=tags.objects.all()
+        self.assertTrue(len(tagger)>0)
+
+    #test for deleting editors
+
+    def test_delete_tag(self):
+        self.tag.save_tag()
+        self.tag.delete_tag()
+        tagger=tags.objects.all()
+        self.assertTrue(len(tagger)==0)
