@@ -21,3 +21,17 @@ class Editor(models.Model):
 class tags(models.Model):
     name=models.CharField(max_length=10)
     tag_image=models.ImageField(upload_to='articles/')
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        ordering=['name']
+
+    #saving function
+    def save_tag(self):
+        self.save()
+
+    #deleting function
+    def delete_tag(self):
+        self.delete()
