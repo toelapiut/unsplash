@@ -78,7 +78,7 @@ class Photos_two(models.Model):
         photo=cls.objects.filter(title__icontains=search_term)
         return photo 
 
-class Photo_three(models.Model):
+class Photos_three(models.Model):
     title = models.CharField(max_length =60)
     photo_three=models.ImageField(upload_to='articles/')
     pub_date=models.DateTimeField(auto_now_add=True)
