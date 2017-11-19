@@ -18,6 +18,8 @@ class Editor(models.Model):
     def delete_editor(self):
         self.delete()
 
+
+##  tag class
 class tags(models.Model):
     name=models.CharField(max_length=10)
     tag_image=models.ImageField(upload_to='articles/')
@@ -36,15 +38,25 @@ class tags(models.Model):
     def delete_tag(self):
         self.delete()
 
+
+##Photo class
 class Photos(models.Model):
+    title = models.CharField(max_length =60)
     photo=models.ImageField(upload_to='articles/')
+    photo_two=models.ImageField(upload_to='articles/')
+    photo_three=models.ImageField(upload_to='articles/')
     pub_date=models.DateTimeField(auto_now_add=True)
     editor=models.ForeignKey(Editor)
     tags=models.ManyToManyField(tags)
 
-
     def __str__(self):
-        return photo
+        return self.title
 
     class Meta:
         ordering=['pub_date']
+
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        photo=cls.objects.filter(title__icontains=search_term)
+        return photo 
