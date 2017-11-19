@@ -1,25 +1,34 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://use.fontawesome.com/0b9bda3e62.js"></script>
 
-  <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><i class="fa fa-camera fa-x4" aria-hidden="true"></i></a>
-          </div>
-    
-          <!-- Adding a search form  -->
-          <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8">
-    
-            <form class="navbar-form" role="search" action="">
-    
-              <div class="input-group">
-                <input type="text" class="form-control form-rounded" placeholder="Search Article" name="article">
-                <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-    
-            </form>
-          </div>
-          <!-- search form end -->
-        </div>
-      </nav>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><i class="fa fa-camera fa-2x" aria-hidden="true"></i></a>
+      </div>
+      <!-- Adding a search form  -->
+      <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+            <div class="form-group has-feedback">
+              <input type="text" autocomplete="off" autocorrect="true" autocapitalize="on" spellcheck="true"  class="form-control form-rounded" name="search" placeholder="Search..." name='photo'>
+              <i class="form-control-feedback glyphicon glyphicon-search"></i>
+            </div>
+        </form>
+      </div>
+      <!-- search form end -->
+      <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></li>
+            <li><a href="#">|</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#" class="join-btn"><button class="btn btn-success"><span>Join Free</span></button></a></li>
+          </ul>
+      </div>
+      <!--/.nav-collapse -->
+      
+
+    </div>
+</nav>
