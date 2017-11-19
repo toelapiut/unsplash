@@ -1,31 +1,40 @@
 {% load bootstrap3 %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- title display -->
     {%if title%}
     <title>{{title}}</title>
     {%else%}
     <title>Welcome</title>
     {%endif%}
 
-    {%block styles%}
-    {%bootstrap_css%}
-    {%endblock%}
+    <!-- styles block -->
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
+    {% endblock %}
+
+
 </head>
 <body>
-    {%include 'all-temp/navbar.html'%}
 
+    {%include 'all-temp/navbar.html'%}
     
-  {%block content%}
-  
-  {%endblock%} 
-  
-  {%block scripts%}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {%bootstrap_javascript%}
-  {%endblock%}
+    {%block content%}
+   
+    {%endblock%} 
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}  
+
 </body>
 </html>
