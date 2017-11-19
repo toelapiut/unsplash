@@ -5,50 +5,53 @@
 {%block content%}
     {{bock.super}}
     <div id="tags">
-        {%for tags in tag%}
-            <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
-                <a href="{%url 'tag_view' tags.id%}"> <img src="{{tags.tag_image.url}}" alt="" class="tag_image"></a>
-                <h4>{{tags.name}}</h4>
-            </div>
-        {%endfor%}
+        <div class="row">
+            {%for tags in tag%}
+                <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
+                    <a href="{%url 'tag_view' tags.id%}"> <img src="{{tags.tag_image.url}}" alt="" class="tag_image"></a>
+                    <h4><span class="tag_names">{{tags.name}}</span></h4>
+                </div>
+            {%endfor%}
+        </div>
     </div>
     <br>
     <br>
     <div class="container">
-      
-        <h1>Unsplash</h1>
-        <h5>Beautiful, free photos.</h5>
-        <h5>Gifted by the world’s most generous community of photographers. </h5>
-        <button class="btn btn-default">Submit a Photo</button>
+         <div class="head-wrapper" id="head-wrapper">
+            <h1><span class="logo_name">Unsplash</span></h1>
+            <h1><span class="sub_title">Beautiful, free photos.</span></h1>
+            <p><span class="header_topic">Gifted by the world’s most generous community of photographers. 🎁</span> </p>
+            <a href="#" id="button_submit">Submit a photo</a>
+        </div>
         <br>
         <br>
         <div class="row">
             <div class="col-sm-1 col-md-1 col-xs-1 col-lg-1">
-                <h5>Trending</h5>
+                <h5><span class="trend">Trending</span></h5>
             </div>
             <div class="col-sm-11 col-md-11 col-xs-11 col-lg-11">
-                <h5>New</h5>
+                <h5><span class="trend">New</span></h5>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " id="image">
                 {%for photos_all in photos%}
-                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
                     <img src="{{photos_all.photo.url}}" alt="">
                 </div>
                 {%endfor%} 
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4" id="image">
                 {%for photos_all in div_two%}
-                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
                     <img src="{{photos_all.photo.url}}" alt="">
                 </div>
                 {%endfor%} 
                 
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4" id="image">
                 {%for photos_all in div_three%}
-                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
                     <img src="{{photos_all.photo_three.url}}" alt="">
                 </div>
                 {%endfor%} 
