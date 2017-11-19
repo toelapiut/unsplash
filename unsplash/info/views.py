@@ -1,6 +1,6 @@
 from django.http import HttpResponse,Http404
 from django.shortcuts import render,redirect
-from .models import Photos,Editor,tags
+from .models import Photos,Editor,tags,Photos_two,Photos_three
 
 # Create your views here.
 def index(request):
@@ -8,12 +8,14 @@ def index(request):
 
     tag=tags.objects.all()
     photos=Photos.objects.all()
+    div_two=Photos_two.objects.all()
+    div_three=Photos_three.objects.all()
     # try:
     #     photo = Photos.objects.get(id = photo_id)
     # except DoesNotExist:
     #     raise Http404()
 
-    return render(request,'all-temp/index.html',{"tag":tag,"photos":photos})
+    return render(request,'all-temp/index.html',{"tag":tag,"photos":photos,"div_two":div_two,"div_three":div_three})
 
 def tags_page(request,tags_id):
 
