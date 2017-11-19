@@ -43,7 +43,43 @@ class tags(models.Model):
 class Photos(models.Model):
     title = models.CharField(max_length =60)
     photo=models.ImageField(upload_to='articles/')
-    photo_two=models.ImageField(upload_to='articles/')
+    pub_date=models.DateTimeField(auto_now_add=True)
+    editor=models.ForeignKey(Editor)
+    tags=models.ManyToManyField(tags)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering=['pub_date']
+
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        photo=cls.objects.filter(title__icontains=search_term)
+        return photo 
+
+class Photos_two(models.Model):
+    title = models.CharField(max_length =60)
+    photo=models.ImageField(upload_to='articles/')
+    pub_date=models.DateTimeField(auto_now_add=True)
+    editor=models.ForeignKey(Editor)
+    tags=models.ManyToManyField(tags)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering=['pub_date']
+
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        photo=cls.objects.filter(title__icontains=search_term)
+        return photo 
+
+class Photo_three(models.Model):
+    title = models.CharField(max_length =60)
     photo_three=models.ImageField(upload_to='articles/')
     pub_date=models.DateTimeField(auto_now_add=True)
     editor=models.ForeignKey(Editor)
