@@ -1,3 +1,4 @@
-virtual/
+venv
 *.pyc
+staticfiles
 .env
