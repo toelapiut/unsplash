@@ -12,7 +12,8 @@
         {%if photo%}
             {%for photos in photo%}
                 <div class="col-sm-6 col-md-3 col-xs-12 col-lg-3">
-                    <img src="{{photos.photo.url}}" alt="image">
+                    <img src="{{photos.title.photo.url}}" alt="image">
+                    <h1>{{photos.title}}</h1>
                 </div>
             {%endfor%}
         {%endif%}
