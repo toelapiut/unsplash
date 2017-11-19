@@ -1,0 +1,136 @@
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans', sans-serif; */
+
+img.tag_image{
+/* height: 50%; */
+ margin-left:0px;
+ border-radius: 7px;
+ width: 100%;
+ height:50px;
+}
+.tag_image img{
+    padding: 0px;
+}
+div.tag_image{
+    padding: 0;
+    margin-right: 10px;
+}
+
+.container{
+    margin-top: 50px;
+}
+img{
+    /* height: 50%; */
+    display: inline-block;
+    justify-content: space-around;
+    margin-left:-2px;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0px;
+    cursor: zoom-in;
+    /* position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    }
+
+
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+
+}
+div.modal-body{
+    /* height: -webkit-fill-available; */
+    height: 200vh;
+}
+
+h4{
+    text-align: center;
+    margin-top:-75px;
+    color: white;
+    margin-bottom:-110px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.modal-dialog {
+    width: 1300px;
+    margin: 30px auto;
+}
+.camera{
+    color:black
+}
+
+.navbar-Brand.fa-camera{
+    content: "\f030";
+    color: black;
+}
+.navbar navbar-default{
+    color: white;
+    border: none;
+}
+i.fa.fa-camera.fa-x4{
+    color: black;   
+}
+
+.navbar-form .form-control {
+    border-radius: 30px;
+    width: 900px;
+}
+
+.navbar {
+    height: 80px;
+    /* background-color: transparent; */
+    border: none;
+    /* color: white; */
+    z-index: 100;
+    -webkit-transition: background-color 1s ease 0s;
+    transition: background-color 1s ease 0s;
+  }
+ul.navbar.navbar-nav.navbar-right li a.join-btn{
+    padding: 0px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a.navbar-brand{
+    margin-top: -6px;
+}
+form.navbar-form{
+    margin-top: 10px;
+}
+.navbar-collapse {
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.fa-camera:before {
+    content: "\f030";
+    color: black;
+}
+
+/* search bar  */
+
+/* .ln0CA {
+    width: 100%;
+    height: 40px;
+    padding: 0 30px 2px 42px;
+    font-size: 14px;
+    color: #111; 
+    background-color: #f1f1f1; 
+    border: 1px solid transparent;
+    border-radius: 20px;
+    outline: none;
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} */
