@@ -1,0 +1,55 @@
+{%extends 'all-temp/base.html'%}
+{% load staticfiles %}
+
+
+{%block content%}
+    {{bock.super}}
+
+    {%for tags in tagz%}
+    <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
+        <img src="{{tags.tag_image.url}}" alt="" class="tag_image">
+        <h4>{{tags.name}}</h4>
+    </div>
+    {%endfor%}
+    <br>
+    <br>
+    <div class="container">
+    
+        <h1>{{tag.name}}</h1>
+        <h5>{{tag.tags.photo|length}}.</h5>
+        <img src="{{tag.tags.photo.url}}" alt="sipo">
+        
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-1 col-md-1 col-xs-1 col-lg-1">
+                <h5>Trending</h5>
+            </div>
+            <div class="col-sm-11 col-md-11 col-xs-11 col-lg-11">
+                <h5>New</h5>
+            </div>
+        </div>
+        <div class="row">
+            {%for tags_images in tag.tags.photo%}
+                <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
+                    <img src="{{tag_images.url}}" alt="">
+                </div>
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-content">
+                            <div class="modal-body">                        
+                                <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"  data-target="#exampleModalLong">
+                                    <!-- <img src="{{photos_all.photo.url}}" alt="hello there"> -->
+                                    <h1>Helllo there</h1>
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}          
+        </div>
+    </div>
+{%endblock%}
