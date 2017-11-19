@@ -30,13 +30,15 @@ def tags_page(request,tags_id):
     return render(request,"all-temp/tags.html",{"tag":tag,"tagz":tagz})
 
 def search_results(request):
-
-    if 'photo' in request.GET and request.GET["photo"]:
-        search_term=request.GET.get("photo")
-        searched_photo=Photos.search_by_title(search_term)
-        message=f"{search_term}"
-        return render(request,'all-temp/search.html',{"message":message,"photo":searched_photos})
     
+    if 'title' in request.GET and request.GET["title"]:
+        print("hello world")
+        search_term = request.GET.get("title")
+        searched_articles = Article.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-temp/search.html',{"message":message,"articles": searched_articles})
+
     else:
-        message='You havent searched for any term'
-        return render(request,'all-temp/search.html',{"message":message})
+        message = "You haven't searched for any term"
+        return render(request, 'all-temp/search.html',{"message":message})
