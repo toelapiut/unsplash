@@ -19,6 +19,11 @@ div.tag_image{
 .container{
     margin-top: 50px;
 }
+
+#tags{
+    padding-left: 30px;
+}
+
 img{
     /* height: 50%; */
     display: inline-block;
