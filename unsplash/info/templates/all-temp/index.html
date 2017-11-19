@@ -29,35 +29,48 @@
                 <h5>New</h5>
             </div>
         </div>
-          
+        <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
             {%for photos_all in photos%}
-            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
                 <img src="{{photos_all.photo.url}}" alt="">
             </div>
-            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                  <div class="modal-content">
-                    <div class="modal-body">
-            
-                        <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"  data-target="#exampleModalLong">
-                            <img src="{{photos_all.photo.url}}" alt="hello there">
-                        </div>
-                        
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {%endfor%}
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                    Launch demo modal
-                  </button> -->
-                  
-                  <!-- Modal -->
-                  
-             
-        
+            {%endfor%} 
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, voluptatem reiciendis deleniti natus aperiam magnam accusamus excepturi ea harum delectus, non dolor, eos error fugiat quasi quae pariatur nemo repellat?</p>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+            {%for photos_all in div_two%}
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
+                <img src="{{photos_all.photo.url}}" alt="">
+            </div>
+            {%endfor%} 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laudantium dolore accusantium aliquid voluptas doloremque, voluptate provident temporibus facilis veniam cumque quis ea illum reprehenderit obcaecati sequi voluptatum perferendis id.</p>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+            {%for photos_all in div_three%}
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
+                <img src="{{photos_all.photo.url}}" alt="">
+            </div>
+            {%endfor%} 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, placeat corrupti asperiores earum pariatur, aperiam officiis dolor qui praesentium id fugit mollitia minima amet, aut quod corporis repellendus ipsam atque?</p>
+        </div>                        
     </div>
+
+<!-- 
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="modal-content">
+            <div class="modal-body">
+    
+                <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"  data-target="#exampleModalLong">
+                    <img src="{{photos_all.photo.url}}" alt="hello there">
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div> -->
 {%endblock%}
