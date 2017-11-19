@@ -1,20 +1,63 @@
 {%extends 'all-temp/base.html'%}
+{% load staticfiles %}
+
+
 {%block content%}
     {{bock.super}}
+
+    {%for tags in tag%}
+    <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
+        <a href="{%url 'tag_view' tags.id%}"> <img src="{{tags.tag_image.url}}" alt="" class="tag_image"></a>
+        <h4>{{tags.name}}</h4>
+    </div>
+    {%endfor%}
+    <br>
+    <br>
     <div class="container">
+      
         <h1>Unsplash</h1>
-        <h4>Beautiful, free photos.</h4>
-        <h4>Gifted by the world’s most generous community of photographers. </h4>
+        <h5>Beautiful, free photos.</h5>
+        <h5>Gifted by the world’s most generous community of photographers. </h5>
         <button class="btn btn-default">Submit a Photo</button>
         <br>
         <br>
         <div class="row">
             <div class="col-sm-1 col-md-1 col-xs-1 col-lg-1">
-                <h4>Trending</h4>
+                <h5>Trending</h5>
             </div>
-            <div class="col-sm-1 col-md-1 col-xs-1 col-lg-1">
-                <h4>New</h4>
+            <div class="col-sm-11 col-md-11 col-xs-11 col-lg-11">
+                <h5>New</h5>
             </div>
         </div>
+          
+            {%for photos_all in photos%}
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"   data-target="#exampleModalLong">
+                <img src="{{photos_all.photo.url}}" alt="">
+            </div>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                  <div class="modal-content">
+                    <div class="modal-body">
+            
+                        <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " data-toggle="modal"  data-target="#exampleModalLong">
+                            <img src="{{photos_all.photo.url}}" alt="hello there">
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%endfor%}
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Launch demo modal
+                  </button> -->
+                  
+                  <!-- Modal -->
+                  
+             
+        
     </div>
 {%endblock%}
