@@ -6,11 +6,11 @@
         <a class="navbar-brand" href="#"><i class="fa fa-camera fa-2x" aria-hidden="true"></i></a>
       </div>
       <!-- Adding a search form  -->
-      <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+      <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6" style="padding:0px">
         <form class="navbar-form" role="search" action="{% url 'search_results' %}">
             <div class="form-group has-feedback">
-              <input type="text" autocomplete="off" autocorrect="true" autocapitalize="on" spellcheck="true"  class="form-control form-rounded" name="search" placeholder="Search..." name='photo'>
-              <i class="form-control-feedback glyphicon glyphicon-search"></i>
+              <input type="text" autocomplete="off" autocorrect="on" autocapitalize="on" spellcheck="true"  class="form-control form-rounded" id="input_field" name="search" placeholder="Search..." name='title'>
+              <i id="lens" class="form-control-feedback glyphicon glyphicon-search"></i>
             </div>
         </form>
       </div>
@@ -24,7 +24,7 @@
             <li><a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></li>
             <li><a href="#">|</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="#" class="join-btn"><button class="btn btn-success"><span>Join Free</span></button></a></li>
+            <li><a href="#" ><button id="join-btn" class="btn btn-success"><span>Join Free</span></button></a></li>
           </ul>
       </div>
       <!--/.nav-collapse -->
