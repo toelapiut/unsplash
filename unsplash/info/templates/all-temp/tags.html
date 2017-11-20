@@ -5,19 +5,23 @@
 {%block content%}
     {{bock.super}}
 
-    {%for tags in tagz%}
-    <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
-        <img src="{{tags.tag_image.url}}" alt="" class="tag_image">
-        <h4>{{tags.name}}</h4>
+    <div id="tags">
+        <div class="row">
+            {%for tags in tagz%}
+                <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
+                    <a href="{%url 'tag_view' tags.id%}"> <img src="{{tags.tag_image.url}}" alt="" class="tag_image"></a>
+                    <h4><span class="tag_names">{{tags.name}}</span></h4>
+                </div>
+            {%endfor%}
+        </div>
     </div>
-    {%endfor%}
     <br>
     <br>
     <div class="container">
     
         <h1>{{tag.name}}</h1>
-        <h5>{{tag.tags.photo|length}}.</h5>
-        <img src="{{tag.tags.photo.url}}" alt="sipo">
+        <h5>{{tag.tags.photo|length}} results of {{tag.name}}</h5>
+        <img src="{{tag.tags.photo.url}}" alt="">
         
         <br>
         <br>
@@ -51,5 +55,10 @@
                 </div>
             {%endfor%}          
         </div>
+    </div>
+    <div class="footer">
+        <span class="footer"><i class="fa fa-camera fa-4x" aria-hidden="true"></i></span>
+        <br>
+        <span class="copy-right"> ©2017 apiut_toel unsplashed</span>
     </div>
 {%endblock%}

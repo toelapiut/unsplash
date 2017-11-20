@@ -1,6 +1,8 @@
-from django.http import HttpResponse,Http404
+from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.shortcuts import render,redirect
-from .models import Photos,Editor,tags,Photos_two,Photos_three
+from .models import Photos,Editor,tags,Photos_two,Photos_three,NewsLetterRecipients
+from .forms import NewsLetterForm
+from .email import send_welcome_email
 
 # Create your views here.
 def index(request):
@@ -10,12 +12,23 @@ def index(request):
     photos=Photos.objects.all()
     div_two=Photos_two.objects.all()
     div_three=Photos_three.objects.all()
-    # try:
-    #     photo = Photos.objects.get(id = photo_id)
-    # except DoesNotExist:
-    #     raise Http404()
+    
+    if request.method =='POST':
+        form =NewsLetterForm(request.POST)
+        if form.is_valid():
+            name=form.cleaned_data['your_name']
+            email=form.cleaned_data['email']
 
-    return render(request,'all-temp/index.html',{"tag":tag,"photos":photos,"div_two":div_two,"div_three":div_three})
+            recipient=NewsLetterRecipients(name=name,email=email)
+            recipient.save()
+        
+            send_welcome_email(name,email)
+
+            HttpResponseRedirect('index')
+    else:
+        form=NewsLetterForm()
+
+    return render(request,'all-temp/index.html',{"tag":tag,"photos":photos,"div_two":div_two,"div_three":div_three,"letterForm":form})
 
 def tags_page(request,tags_id):
 
@@ -42,3 +55,12 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-temp/search.html',{"message":message})
+
+def new_photos(request):
+
+    new_one=Photos.objects.all().order_by('-pub_date')
+    new_two=Photos_two.objects.all().order_by('-pub_date')
+    new_three=Photos_three.objects.all().order_by('-pub_date')
+    tag=tags.objects.all()
+
+    return render(request,'all-temp/new.html',{"new_one":new_one,"new_two":new_two,"new_three":new_three,"tag":tag})

@@ -96,3 +96,7 @@ class Photos_three(models.Model):
     def search_by_title(cls,search_term):
         photo=cls.objects.filter(title__icontains=search_term)
         return photo 
+
+class NewsLetterRecipients(models.Model):
+    name=models.CharField(max_length=30)
+    email=models.EmailField()

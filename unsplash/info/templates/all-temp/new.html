@@ -1,0 +1,67 @@
+{%extends 'all-temp/base.html'%}
+{% load staticfiles %}
+
+
+{%block content%}
+    {{bock.super}}
+    <div id="tags">
+        <div class="row">
+            {%for tags in tag%}
+                <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1 tag_image">
+                    <a href="{%url 'tag_view' tags.id%}"> <img src="{{tags.tag_image.url}}" alt="" class="tag_image"></a>
+                    <h4><span class="tag_names">{{tags.name}}</span></h4>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+         <div class="head-wrapper" id="head-wrapper">
+            <h1><span class="logo_name">Unsplash</span></h1>
+            <h1><span class="sub_title">Beautiful, free photos.</span></h1>
+            <p><span class="header_topic">Gifted by the world’s most generous community of photographers. 🎁</span> </p>
+            <a href="#" id="button_submit">Submit a photo</a>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-1 col-md-1 col-xs-1 col-lg-1">
+                <a href="{%url 'index' %}"><span class="trend">Trending</span></a>
+            </div>
+            <div class="col-sm-11 col-md-11 col-xs-11 col-lg-11">
+                <span class="trend"> New</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 " id="image">
+                {%for photos_all in new_one%}
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
+                    <img src="{{photos_all.photo.url}}" alt="">
+                </div>
+                {%endfor%} 
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4" id="image">
+                {%for photos_all in new_two%}
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
+                    <img src="{{photos_all.photo.url}}" alt="">
+                </div>
+                {%endfor%} 
+                
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4" id="image">
+                {%for photos_all in new_three%}
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " data-toggle="modal"   data-target="#exampleModalLong" id="image_resize">
+                    <img src="{{photos_all.photo_three.url}}" alt="">
+                </div>
+                {%endfor%} 
+                
+            </div> 
+        </div>                       
+    </div>
+    <div class="footer">
+        <span class="footer"><i class="fa fa-camera fa-4x" aria-hidden="true"></i></span>
+        <br>
+        <span class="copy-right"> ©2017 apiut_toel unsplashed</span>
+    </div>
+{%endblock%}

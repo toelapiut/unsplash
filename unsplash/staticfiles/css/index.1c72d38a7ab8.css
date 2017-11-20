@@ -1,0 +1,254 @@
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans', sans-serif; */
+body{
+    box-sizing: border-box;
+    padding: 0px 15px;
+    line-height: 1.6;
+    color: #333;
+    background-color:white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* heading title and the sub title on top */
+.head-wrapper{
+    padding-top: 60px;
+    padding-bottom: 72px; 
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 12px 72px;
+    
+}
+
+.logo_name{
+    font-weight: 700;
+    font-size: 1.2em;
+    color: black;
+}
+
+.sub_title{
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+.header_topic{
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 24px;  
+}
+
+#button_submit{
+    display: block;
+    height: 44px;
+    padding: 0 19px;
+    font-size: 15px;
+    line-height: 41px;
+    cursor: pointer;
+    border: 1px solid #00000047;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    transition: all .2s ease-in-out;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    color: #999;
+    transition: color .2s ease-in-out,opacity .2s ease-in-out;
+    float: left;
+}
+
+/* ------------------------------------------------ */
+
+/* Trend and New  */
+.trend{
+    padding: 12px;
+    padding-left: 0;
+    color: #111;
+    pointer-events: none;
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.trend:hover{
+    padding: 12px;
+    padding-left: 0;
+    color: rgb(145, 141, 141);
+    pointer-events: none;
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.trender{
+    padding: 12px;
+    padding-left: 0;
+    color: #111;
+    pointer-events: none;
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.trender:hover{
+    padding: 12px;
+    padding-left: 0;
+    color: rgb(145, 141, 141);
+    pointer-events: none;
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+/* --------------------------------------------------- */
+
+/* tags and the titles */
+.tag_names{
+    font-size: 14px;
+    color: #fff;
+}
+/* ------------------------------------------------------- */
+img.tag_image {
+    /* height: 50%; */
+    margin-left: 0px;
+    border-radius: 7px;
+    width: 100%;
+    height: 50px;
+}
+
+.tag_image img {
+    padding: 0px;
+}
+
+div.tag_image {
+    padding: 0;
+    margin-right: 10px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#tags {
+    padding-left: 50px;
+}
+
+img {
+    /* height: 50%; */
+    display: inline-block;
+    justify-content: space-around;
+    margin-left: -2px;
+    width: 100%;
+    margin-bottom: 23px;
+    padding: 0px;
+    cursor: zoom-in;
+    /* position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+}
+
+#image_resize{
+    padding:0px 13px 0px;
+}
+
+
+
+/* div.col-md-4.col-sm-2.col-xs-12.col-lg-4{
+    padding: 0px 0px 0px 0px;
+} */
+
+#image {
+    padding: 0px 0px 0px 0px;
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+
+div.modal-body {
+    /* height: -webkit-fill-available; */
+    height: 200vh;
+}
+
+h4 {
+    text-align: center;
+    margin-top: -62px;
+    color: white;
+    margin-bottom: -110px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.modal-dialog {
+    width: 1300px;
+    margin: 30px auto;
+}
+
+.camera {
+    color: black
+}
+
+.navbar-Brand.fa-camera {
+    content: "\f030";
+    color: black;
+}
+
+.navbar navbar-default {
+    color:white;
+    border: none;
+}
+
+i.fa.fa-camera.fa-x4 {
+    color: black;
+   
+}
+
+.navbar-form .form-control {
+    border-radius: 30px;
+    width: 900px;
+}
+
+.navbar {
+    /* background-color: transparent; */
+    border: none;
+    color: white;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    padding: 0px;
+}
+
+a.navbar-brand {
+    margin-top: -6px;
+    float: left;
+    height: 50px;
+    padding-left:45px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+form.navbar-form {
+    margin-top: 10px;
+}
+
+
+.fa-camera:before {
+    content: "\f030";
+    color: black;
+}
+i#lens{
+    color: black;
+}
